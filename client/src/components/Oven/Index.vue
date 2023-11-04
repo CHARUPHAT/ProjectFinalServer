@@ -109,14 +109,14 @@ export default {
 }
 
 .col {
-    background-color: #FFE4B5;
+    background-color: #FFDAB9;
     width: 100%;
     margin-bottom: 5px;
     padding: 20px;
 }
 
 h2 {
-    color: #CD5C5C;
+    color: #2F4F4F;
     font-size: 40px;
 }
 
@@ -126,7 +126,7 @@ h2 {
 
 .btn-secondary {
     position: absolute;
-    background-color: rgb(134, 213, 134);
+    background-color: #E9967A;
     right: 25px;
     bottom: 10px;
 }

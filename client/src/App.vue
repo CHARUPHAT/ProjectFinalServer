@@ -20,10 +20,10 @@ export default {
   margin-top: 60px;
 }
 button{
-  background-color: #ADD496;
+  background-color: #F4A460;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   border-radius: 5px;
-  border-color: #577460;
+  border-color: #FFE4C4;
 }
 button:hover {
   box-shadow: 0 10px 12px 0 rgba(0,0,0,0.25);
