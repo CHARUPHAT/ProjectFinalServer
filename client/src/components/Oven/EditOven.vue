@@ -1,58 +1,89 @@
 <template>
-    <div>
+  <div>
+    <div class="Box-Create">
+      <div class="tablehead">
         <h1>Edit Oven</h1>
-        <form v-on:submit.prevent="editOven">
-          <p>Name : <input type="text" v-model="oven.Name"></p>
-            <p>Size: <input type="text" v-model="oven.Size"> </p>
-            <p>Price : <input type="text" v-model="oven.Price"> </p>
-            <p>Watt : <input type="text" v-model="oven.Watt"> </p>
-            <p><button type="submit">Edit oven</button></p>
+      </div>
+      <form v-on:submit.prevent="editOven">
+        <div class="tablec">
+          <p>Name : <input type="text" v-model="oven.Name" /></p>
+          <p>Size: <input type="text" v-model="oven.Size" /></p>
+          <p>Price : <input type="text" v-model="oven.Price" /> baht</p>
+          <p>Watt : <input type="text" v-model="oven.Watt" /> watt</p>
+          <p><button type="submit">Edit oven</button></p>
           <button v-on:click="navigateTo('/ovens')">Back</button>
+        </div>
       </form>
-        <hr>
+      <hr />
     </div>
+  </div>
 </template>
 
 <script>
-
-import OvenService from '@/services/OvenService'
+import OvenService from "@/services/OvenService";
 
 export default {
   data() {
     return {
       oven: {
-                Name: '',
-                Size: '',
-                Price: '',
-                Watt: '',
-            }
-    }
+        Name: "",
+        Size: "",
+        Price: "",
+        Watt: ""
+      }
+    };
   },
 
   methods: {
     navigateTo(route) {
-      this.$router.push(route)
+      this.$router.push(route);
     },
 
     async editOven() {
       try {
-        await OvenService.put(this.oven)
-        this.$router.push({ name: 'ovens' })
+        await OvenService.put(this.oven);
+        this.$router.push({ name: "ovens" });
       } catch (err) {
-        console.log(err)
+        console.log(err);
       }
     }
   },
 
   async created() {
     try {
-      let ovenId = this.$route.params.ovenId
-      this.oven = (await OvenService.show(ovenId)).data
+      let ovenId = this.$route.params.ovenId;
+      this.oven = (await OvenService.show(ovenId)).data;
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
-}
+};
 </script>
 
-<style scoped></style>
+<style scoped>
+.Box-Create {
+  background-color: #eeb89b;
+  height: 100%;
+  padding: 100px;
+}
+.tablec {
+  background-color: #fff1e4;
+  border-radius: 50px;
+  padding: 30px;
+  margin-bottom: 5px;
+}
+.tablehead{
+  background-color: #ffdab9;
+  border-radius: 50px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+h1 {
+  color: #b58274;
+  margin-bottom: 10px;
+  font-size: 50px;
+  text-decoration: underline;
+  padding: 5px;
+  font-weight: 500;
+}
+</style>
