@@ -8,7 +8,7 @@
             <p>Watt : <input type="text" v-model="oven.Watt"> </p>
             <p><button type="submit">Create oven</button></p>
         </form>
-         <button v-on:click="navigateTo('/ovens')">กลับ</button>
+         <button v-on:click="navigateTo('/ovens')">Back</button>
         
         <hr>
     </div>

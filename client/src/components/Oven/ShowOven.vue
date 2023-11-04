@@ -9,7 +9,7 @@
         <p>{{ oven.Watt }}</p>
         <p>
             <button v-on:click="navigateTo('/oven/edit/'+oven.id)">Edit oven</button>
-            <button v-on:click="navigateTo('/ovens')">กลับ</button>
+            <button v-on:click="navigateTo('/ovens')">Back</button>
         </p>
         <hr>
     </div>
